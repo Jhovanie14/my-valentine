@@ -1,8 +1,13 @@
-import { Indie_Flower } from "next/font/google";
+import { Indie_Flower, Pangolin } from "next/font/google";
 import "./globals.css";
 
 const indieFlower = Indie_Flower({
   variable: "--font-indie-flower",
+  subsets: ["latin"],
+  weight: "400",
+});
+const pangolin = Pangolin({
+  variable: "--font-pangolin",
   subsets: ["latin"],
   weight: "400",
 });
@@ -15,7 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${indieFlower.variable} antialiased`}>{children}</body>
+      <body
+        className={`${indieFlower.variable} ${pangolin.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

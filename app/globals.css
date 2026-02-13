@@ -8,6 +8,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-indie-flower);
+  --handwriting: var(--font-pangolin);
   --color-primary: var(--primary);
 }
 @media (prefers-color-scheme: light) {
