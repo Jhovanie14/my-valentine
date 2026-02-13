@@ -78,9 +78,9 @@ export default function PhotoGallery() {
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center p-4 bg-linear-to-br from-rose-100 via-rose-50 to-amber-50">
+    <div className="w-full h-screen flex items-center justify-center p-0 md:p-4 bg-linear-to-br from-rose-100 via-rose-50 to-amber-50">
       <div className="w-full max-w-2xl">
-        <div className="bg-white/80 backdrop-blur-xl border border-rose-200 shadow-2xl rounded-sm p-8 space-y-6 m-10">
+        <div className="bg-white/80 backdrop-blur-xl border border-rose-200 shadow-2xl rounded-sm p-8 space-y-6 m-5 md:m-10">
           {/* Audio Player */}
           <div className="flex items-center gap-4">
             <button
@@ -112,7 +112,7 @@ export default function PhotoGallery() {
 
             <div className="space-y-4">
               {/* Current Image */}
-              <div className="w-full aspect-square bg-gray-200 rounded-sm overflow-hidden shadow-lg">
+              <div className="w-full aspect-auto bg-gray-200 rounded-sm overflow-hidden shadow-lg">
                 <Image
                   src={images[currentImageIndex]}
                   alt={`Memory ${currentImageIndex + 1}`}
@@ -126,7 +126,7 @@ export default function PhotoGallery() {
               <div className="flex items-center justify-between gap-4">
                 <button
                   onClick={prevImage}
-                  className="px-4 py-2 text-rose-600 border border-rose-300 font-sans
+                  className="px-4 text-xs sm:text-sm py-2 text-rose-600 border border-rose-300 font-sans
                              hover:bg-rose-50 transition-all duration-300 cursor-pointer"
                 >
                   ← Previous
@@ -136,7 +136,7 @@ export default function PhotoGallery() {
                 </span>
                 <button
                   onClick={nextImage}
-                  className="px-4 py-2 text-rose-600 border border-rose-300 font-sans
+                  className="px-4 py-2 text-xs sm:text-sm text-rose-600 border border-rose-300 font-sans
                              hover:bg-rose-50 transition-all duration-300 cursor-pointer"
                 >
                   Next →

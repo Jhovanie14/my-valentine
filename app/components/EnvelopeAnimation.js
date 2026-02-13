@@ -15,9 +15,11 @@ From the moment we met, you've brought so much joy and light into my life. Every
 
 Your smile brightens my darkest days, your laughter is my favorite sound, and your presence is my greatest comfort. You make the ordinary extraordinary, and the simple moments unforgettable.
 
+Thank you for always staying by my side, even when times are tough. Thank you for your understanding, unwavering support, and your love, patience, and kindness—they mean the world to me. I’m so grateful for every moment we share. You make my life brighter, happier, and full of love, and I can’t imagine going through this journey without you.
+
 I want you to know that you are loved, appreciated, and treasured more than words could ever express. Thank you for being you, and for choosing to share your life with me.
 
-All my love,
+All my love,  
 Your Daddy ❤️`;
 
   // Auto-start envelope animation on mount
