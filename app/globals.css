@@ -1,26 +1,197 @@
 @import "tailwindcss";
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #e11d48;
 }
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-indie-flower);
+  --color-primary: var(--primary);
 }
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+} /* Envelope Animation Styles */
+.envelope-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 400px;
+  margin-bottom: 40px;
+}
+#envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: #be185d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  perspective: 1000px;
+}
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+.flap {
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 82px solid transparent;
+  border-top: 98px solid #be185d;
+  transform-origin: top;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.pocket {
+  border-left: 140px solid #ec4899;
+  border-right: 140px solid #ec4899;
+  border-bottom: 90px solid #db2777;
+  border-top: 90px solid transparent;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.letter {
+  position: relative;
+  background-color: #ffffff;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90%;
+  top: 5%;
+  border-radius: 6px;
+  box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+.letter::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(215, 227, 239, 0.7) 55%,
+    rgba(215, 227, 239, 1) 100%
+  );
+}
+.words {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 14%;
+  background-color: #eeeff0;
+  border-radius: 2px;
+}
+.words.line1 {
+  top: 15%;
+  width: 20%;
+  height: 7%;
+}
+.words.line2 {
+  top: 30%;
+}
+.words.line3 {
+  top: 50%;
+}
+.words.line4 {
+  top: 70%;
+}
+.open .flap {
+  transform: rotateX(180deg);
+  transition:
+    transform 0.4s ease,
+    z-index 0.6s;
+  z-index: 1;
+}
+.close .flap {
+  transform: rotateX(0deg);
+  transition:
+    transform 0.4s 0.6s ease,
+    z-index 1s;
+  z-index: 5;
+}
+.close .letter {
+  transform: translateY(0px);
+  transition:
+    transform 0.4s ease,
+    z-index 1s;
+  z-index: 1;
+}
+.open .letter {
+  transform: translateY(-60px);
+  transition:
+    transform 0.4s 0.6s ease,
+    z-index 0.6s;
+  z-index: 2;
+}
+@keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -600px;
+  }
+}
+@keyframes sideSway {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+@keyframes letterExit {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-250px) scale(1.6);
+    opacity: 1;
+  }
+}
+@keyframes zoomFromEnvelope {
+  0% {
+    transform: scale(0.3) translateY(80px);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(0.35) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.letter-exit {
+  animation: letterExit 0.8s ease-out forwards;
+  z-index: 10 !important;
+}
+.letter-zoom {
+  animation: zoomFromEnvelope 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
