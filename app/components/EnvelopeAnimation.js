@@ -11,7 +11,7 @@ export default function EnvelopeAnimation({ onOpen }) {
 
   const letterText = `My Mommy,
 
-Una sa tanan I love you so much, sukad satong pagkaila hantud karon grabe ang kalipay ug kahayag na gidala nmu sakong kinahubi. Adlaw-adlaw nakong ginapasalamatan sa Ginoo na gihatag ka niya sakoa. Saatong mga laag, bonding, ug kiat together imong kalipay ang katawa ang naga hatag ug comfort saako.
+Una sa tanan I love you so much, sukad satong pagkaila hantud karon grabe ang kalipay ug kahayag na gidala nmu sakong kinahubi. Adlaw-adlaw nakong ginapasalamatan sa Ginoo na gihatag ka niya sakoa. Saatong mga laag, bonding, ug kiat together imong kalipay ug katawa ang naga hatag ug comfort saako.
 
 Salamat sa pag stay sakong side bisag bandlungon kayko. Salamat sa pag sabot sa walay undang na pag supporta ug sa imong taas na pasensya, Ikaw ug ikaw ang akong pahulay, kalipay, ug kusog. Dili nako ma imagine ang dagan sakong journey ug wala ka
 
